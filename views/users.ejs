@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/home.css"> 
+</head>
+<body>
+    <h1>Lista Utenti</h1>
+    <ul>
+        <% users.forEach(user => { %>
+            <li><%= user.nome %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
+
+<!-- non funziona il css -->

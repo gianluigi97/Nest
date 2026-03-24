@@ -47,16 +47,25 @@ class Database {
             throw err
         }
     }
+
+    async getActivities() {
+        const pool = this.connection()
+
+        try {
+            const res = await pool.query("SELECT * FROM attivita")
+            return res.rows
+        } catch (err) {
+            console.error("Query error: ", err)
+            throw err
+        }
+    }
 }
 
 export default Database
 
 
-const db = new Database()
-const users = await db.getUser()
-const nomi = users.map(row => row.nome)
+// const db = new Database()
+// const acts = await db.getActivities()
 
 
-
-
-console.log(nomi)
+// console.log(acts)
