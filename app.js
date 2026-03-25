@@ -14,11 +14,20 @@ app.set('views', path.join(process.cwd(), 'views'))
 app.get('/users', async (req, res) => {
     try {
         const users = await db.getUser() 
-        res.render('users', { users })
+        res.render('index', { users })
     } catch (err) {
         res.status(500).send("Errore server")
     }
 }) 
+
+app.get('/activities', async (req, res) => {
+    try {
+        const acts = await db.getActivities()
+        res.render('index', { acts })
+    } catch (err) {
+        res.status(500).send("Errore Server")
+    }
+})
 
 
 

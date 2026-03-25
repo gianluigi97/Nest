@@ -1,14 +1,16 @@
 ul {
+  border: solid black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 20px;
-  
-    
+  max-height: 300px;
+  overflow: scroll;
+
 }
 
-div {
+li {
   border: solid black;
   width: 300px;
   height: 100px;
@@ -17,6 +19,14 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
+}
 
+ul::-webkit-scrollbar {
+  width: 8px;
+}
 
+ul::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
 }

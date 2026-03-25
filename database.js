@@ -59,13 +59,22 @@ class Database {
             throw err
         }
     }
+
+    async newActivity(created_by, created_for, description, due_date, is_finished) {
+        const pool = this.connection()
+
+        try {
+            const q = `INSERT INTO attivita (created_by, created_for, description, due_date, is_finished) VALUES ($1, $2, $3, $4, $5)`
+            const values = [created_by, created_for, description, due_date, is_finished]
+            const res = await pool.query(q, values)
+            return res
+        }catch (err) {
+            console.error("Error: ", err)
+            throw err
+        }
+
+    }
 }
 
 export default Database
 
-
-// const db = new Database()
-// const acts = await db.getActivities()
-
-
-// console.log(acts)
