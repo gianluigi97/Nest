@@ -1,0 +1,10 @@
+
+bypass administrator to activate venv: 
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+activate venv: 
+
+.\venv\Scripts\activate
+
+.\.venv\Scripts\activate
