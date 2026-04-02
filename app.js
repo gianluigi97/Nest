@@ -29,6 +29,14 @@ app.get('/activities', async (req, res) => {
     }
 })
 
+app.get('/activitiy_state', async (req, res) => {
+    try {
+        const acts = await db.getActivities()
+        res.render('index', { acts })
+    } catch (err) {
+        res.status(500).send("Errore Server")
+    }
+})
 
 
 

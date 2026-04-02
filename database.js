@@ -74,7 +74,20 @@ class Database {
         }
 
     }
+
+    async getStateOfActivities() {
+        const pool = this.connection()
+
+        try {
+            const res = await pool.query("SELECT * FROM stato_attivita")
+            return res.rows
+        } catch (err) {
+            console.error("Query error: ", err)
+            throw err
+        }
+    }
 }
+
 
 export default Database
 
