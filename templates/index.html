@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/home.css"> 
+</head>
+<body>
+    <h1>Checklist</h1>
+    <ul>
+        {% for item in data %}
+            <li>{{ item.description }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html> 

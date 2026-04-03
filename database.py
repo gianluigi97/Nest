@@ -41,6 +41,7 @@ class Database:
         result = resp.fetchall()
 
         return result
+    
 
 
 if __name__ == "__main__":
